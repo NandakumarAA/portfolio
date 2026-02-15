@@ -10,6 +10,12 @@ const stripHtml = (html) => {
   return html.replace(/<[^>]*>/g, "");
 };
 
+const extractImageFromHtml = (html) => {
+  if (!html) return null;
+  const m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+  return m ? m[1] : null;
+};
+
 const excerpt = (text, length = 120) => {
   if (!text) return "";
   return text.length > length ? text.slice(0, length).trim() + "…" : text;
@@ -61,14 +67,20 @@ const Projects = ({ username = DEFAULT_USERNAME }) => {
         if (!res.ok) throw new Error("Failed to fetch feed");
         const data = await res.json();
         if (data && data.items) {
-          const items = data.items.map((it, idx) => ({
-            id: idx,
-            title: it.title,
-            link: it.link,
-            thumbnail: it.thumbnail || "https://via.placeholder.com/400x250",
-            pubDate: it.pubDate,
-            content: stripHtml(it.content).split("\n").join(" "),
-          }));
+          const items = data.items.map((it, idx) => {
+            const thumb =
+              it.thumbnail ||
+              extractImageFromHtml(it.content) ||
+              "https://via.placeholder.com/400x250";
+            return {
+              id: idx,
+              title: it.title,
+              link: it.link,
+              thumbnail: thumb,
+              pubDate: it.pubDate,
+              content: stripHtml(it.content).split("\n").join(" "),
+            };
+          });
           setPosts(items);
         } else {
           setPosts([]);
