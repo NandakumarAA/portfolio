@@ -21,7 +21,7 @@ const excerpt = (text, length = 120) => {
   return text.length > length ? text.slice(0, length).trim() + "…" : text;
 };
 
-const Projects = ({ username = DEFAULT_USERNAME }) => {
+const Blogs = ({ username = DEFAULT_USERNAME }) => {
   const [posts, setPosts] = useState([]);
   const [expanded, setExpanded] = useState(false);
 
@@ -122,7 +122,7 @@ const Projects = ({ username = DEFAULT_USERNAME }) => {
   const visiblePosts = expanded ? posts : posts.slice(0, SHOW_COUNT);
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="blogs" className="projects-section">
       <div className="section-header">
         <h2 className="section-title gradient-text">Featured Blogs</h2>
         <p className="section-subtitle">Latest from my Medium.</p>
@@ -179,4 +179,4 @@ const Projects = ({ username = DEFAULT_USERNAME }) => {
   );
 };
 
-export default Projects;
+export default Blogs;
