@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-content">
-        <div class="row">
-          <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 vcard-info p-lg-2">
+        <div className="row">
+          <div className="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 vcard-info p-lg-2">
             <img
               src={profileImg}
               alt="Profile"
