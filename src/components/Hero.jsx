@@ -1,14 +1,19 @@
 import React from "react";
 import "../styles/Hero.css";
-import profileImg from "../assets/myprofile.jpg";
+import profileImg from "../assets/myprofile.jpeg";
+import { FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-content">
         <div class="row">
-          <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 vcard-info">
-            <img src={profileImg} alt="Profile" className="img-fluid" />
+          <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 vcard-info p-lg-2">
+            <img
+              src={profileImg}
+              alt="Profile"
+              className="img-fluid rounded-5"
+            />
           </div>
         </div>
         <h3 className="hero-subtitle">Hello, I'm</h3>
@@ -23,8 +28,14 @@ const Hero = () => {
         </p>
 
         <div className="hero-cta">
-          <a href="/resume.pdf" download className="btn-primary">
-            Download Resume
+          <a
+            href="https://www.linkedin.com/in/nandakumar-a-a-b86789147/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            <FaLinkedin className="me-2" />
+            LinkedIn Profile
           </a>
           <a href="#contact" className="btn-secondary">
             Contact Me
