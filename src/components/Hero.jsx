@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Hero.css";
 import profileImg from "../assets/myprofile.jpg";
+import { FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -23,8 +24,14 @@ const Hero = () => {
         </p>
 
         <div className="hero-cta">
-          <a href="/resume.pdf" download className="btn-primary">
-            Download Resume
+          <a
+            href="https://www.linkedin.com/in/nandakumar-a-a-b86789147/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            <FaLinkedin className="me-2" />
+            LinkedIn Profile
           </a>
           <a href="#contact" className="btn-secondary">
             Contact Me
