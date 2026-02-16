@@ -46,6 +46,18 @@
     font-size: 0.9rem;
 }
 
+.contact-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.contact-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -73,6 +85,33 @@
 
 .form-group textarea {
     resize: vertical;
+}
+
+.success-message {
+    padding: 1rem;
+    background: rgba(39, 201, 63, 0.1);
+    border: 1px solid rgba(39, 201, 63, 0.3);
+    border-radius: var(--border-radius-sm);
+    color: #27c93f;
+    font-size: 0.95rem;
+    text-align: center;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 @media screen and (max-width: 768px) {

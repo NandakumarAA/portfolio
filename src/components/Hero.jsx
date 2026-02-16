@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Hero.css";
-import profileImg from "../assets/myprofile.jpg";
+import profileImg from "../assets/myprofile.jpeg";
 import { FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
@@ -8,8 +8,12 @@ const Hero = () => {
     <section id="hero" className="hero-section">
       <div className="hero-content">
         <div class="row">
-          <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 vcard-info">
-            <img src={profileImg} alt="Profile" className="img-fluid" />
+          <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 vcard-info p-lg-2">
+            <img
+              src={profileImg}
+              alt="Profile"
+              className="img-fluid rounded-5"
+            />
           </div>
         </div>
         <h3 className="hero-subtitle">Hello, I'm</h3>
